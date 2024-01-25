@@ -1,0 +1,19 @@
+{
+  "name": "rocket-anti-injesion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm install next@^12.0.0 react@^17.0.2 react-dom@^17.0.2"
+  },
+  "dependencies": {
+    "csurf": "^1.11.0",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "next": "^12.3.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rocket-anti-injesion": "file:./plugins/rocket-anti-injesion",
+    "xss": "^1.0.14"
+  },
+  "other-dependencies": {}
+}

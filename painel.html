@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERVIDOR-ROCKET-NET-LOCAL-HOST</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2 {
+      color: #61dafb; /* Cor azul claro, você pode ajustar conforme necessário */
+    }
+
+    #logs {
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Informações em Tempo Real</h1>
+  <div id="logs"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Manipular evento de atualização de dados
+    socket.on('atualizarDados', (dadosEmTempoReal) => {
+      // Exibir informações
+      document.getElementById('logs').innerHTML = `<h2>Logs em Tempo Real:</h2><ul>${dadosEmTempoReal.logs.map(log => `<li>${log}</li>`).join('')}</ul>`;
+    });
+  </script>
+</body>
+</html>
